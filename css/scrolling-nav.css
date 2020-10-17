@@ -1,0 +1,46 @@
+header {
+    padding: 156px 0 100px;
+}
+
+section {
+    padding: 150px 0;
+}
+
+.atmos-wrapper {
+    background-color: #001;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+#canvas {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+}
+
+.content {
+    z-index: 1;
+    position: relative;
+}
+
+.bounding {
+    background-color: whitesmoke;
+    border-radius: 25px;
+}
+
+.container {
+    max-width: 90%;
+}
+
+.punch {
+    font-weight: bolder;
+    font-size: 1500%;
+}
+
+.lead {
+    font-size: 170%;
+}

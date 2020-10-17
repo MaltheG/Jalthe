@@ -1,0 +1,58 @@
+#codeArea {
+    outline: none;
+    resize: none;
+    margin-top: 0;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background-color: #007ee0;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 5%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: 0.3s;
+    color: whitesmoke;
+    font-weight: bold;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    border-right: 1px solid #0056a9;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #0098ff;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #282b2e;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border-top: none;
+    height: inherit;
+}
+
+.cdisplay {
+    height: 800px;
+}
+
+pre {
+    height: 95%;
+    margin-top: 0;
+}
