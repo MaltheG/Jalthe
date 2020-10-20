@@ -61,7 +61,7 @@
                     <h1 class="punch">Hello.</h1>
                 </div>
                 <div class="col-lg-6 mx-auto bounding">
-                    <p class="lead">My name is Malthe and I'm a Computer Science student at Aarhus University. My main interests are Machine Learning and Distributed Systems although down to anything that piques my interest. I mainly program in Java, Python, Javascript and a bit of C. This page functions as my playground and portfolio where some of my spare time projects are highlighted. If you wish to contact me, you can do so on dev@jalthe.com</p>
+                    <p class="lead">My name is Malthe and I'm a Computer Science Student at Aarhus University. My main interests are Machine Learning and Distributed Systems although I'm down to do anything that piques my interest. I mainly program in Java, Python, Javascript and a bit of C. This page functions as my playground and portfolio where some of my spare time projects are highlighted. If you wish to contact me, you can do so on dev@jalthe.com</p>
                 </div>
             </div>
         </div>
@@ -72,21 +72,22 @@
             <div class="row">
                 <div class="col-lg-7 mx-auto cdisplay">
                     <?php
-                    $repo = "https://raw.githubusercontent.com/MaltheG/Jotunn/master/";
+                    $repname = "Jotunn";
+                    $repo = "https://raw.githubusercontent.com/MaltheG/" . $repname . "/master/";
                     $files = file($repo . "demo",FILE_IGNORE_NEW_LINES);
 
                     echo "<div class=\"tab\" id=\"tabContainer\">";
 
                     foreach($files as $file) {
-                        echo "<button class=\"tablinks\" onclick=\"openFile(event, '" . $file . "')\">" . $file . "</button>";
+                        echo "<button class=\"tablinks link_" . $repname . "\" onclick=\"openFile(event, '" . $file . "', '" .  $repname . "')\">" . $file . "</button>";
                     }
                     unset($file);
 
                     echo "</div>";
 
                     foreach($files as $file) {
-                        $contents = file_get_contents("https://raw.githubusercontent.com/MaltheG/Jotunn/master/" . $file);
-                        echo "<div id=" . $file . " class=\"tabcontent\"
+                        $contents = file_get_contents($repo . $file);
+                        echo "<div id=" . $file . " class=\"tabcontent content_" . $repname . "\"
                                 ><pre
                                     ><code class='h-100' id='codeArea'>" . $contents . "</code
                                 ></pre
@@ -120,21 +121,24 @@
                 </div>
                 <div class="col-lg-7 mx-auto cdisplay">
                     <?php
-                    $repo = "https://raw.githubusercontent.com/MaltheG/Jotunn/master/";
+                    $repname = "Jalthe";
+                    $repo = "https://raw.githubusercontent.com/MaltheG/" . $repname . "/main/";
                     $files = file($repo . "demo",FILE_IGNORE_NEW_LINES);
 
                     echo "<div class=\"tab\" id=\"tabContainer\">";
 
                     foreach($files as $file) {
-                        echo "<button class=\"tablinks\" onclick=\"openFile(event, '" . $file . "')\">" . $file . "</button>";
+                        echo "<button class=\"tablinks link_" . $repname . "\" onclick=\"openFile(event, '" . $file . "', '" .  $repname . "')\">" . $file . "</button>";
                     }
                     unset($file);
 
                     echo "</div>";
 
                     foreach($files as $file) {
-                        $contents = file_get_contents("https://raw.githubusercontent.com/MaltheG/Jotunn/master/" . $file);
-                        echo "<div id=" . $file . " class=\"tabcontent\"
+                        $contents = file_get_contents($repo . $file);
+                        $contents = str_replace("<", "&lt;", $contents);
+                        $contents = str_replace(">", "&gt;", $contents);
+                        echo "<div id=" . $file . " class=\"tabcontent content_" . $repname . "\"
                                 ><pre
                                     ><code class='h-100' id='codeArea'>" . $contents . "</code
                                 ></pre
@@ -146,21 +150,10 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto bounding">
-                    <h2>Contact us</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Jalthe.com 2020</p>
         </div>
         <!-- /.container -->
     </footer>

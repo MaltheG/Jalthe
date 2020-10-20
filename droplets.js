@@ -243,7 +243,7 @@ function circleIntersect(x1, y1, r1, x2, y2, r2) {
 function clearRect() {
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = "#001";
-    ctx.fillRect(0, 0, width, height);
+    ctx.fillRect(0, 0, width, height); //TODO problem here
 }
 
 function spawnDroplet() {
@@ -260,7 +260,7 @@ function init(){
     lastFrame = Date.now();
 
     canvas = document.getElementById("canvas");
-    ctx = canvas.getContext("2d", {alpha: false});
+    ctx = canvas.getContext("2d", {alpha: true});
 
     width = window.innerWidth;
     height = window.innerHeight;
@@ -270,7 +270,7 @@ function init(){
 
     mouseObj = new mouse();
 
-    canvas.addEventListener('mousemove', function (evt) {
+    document.addEventListener('mousemove', function (evt) {
         const rect = canvas.getBoundingClientRect();
         mouseObj.x = Math.floor(evt.clientX - rect.left);
         mouseObj.y = Math.floor(evt.clientY - rect.top);
@@ -320,7 +320,8 @@ function animate() {
     detectEdgeCollisions();
 
     clearRect();
-    mouseObj.draw();
+
+    //mouseObj.draw();
 
     for (let i = droplets.length - 1; i >= 0; i--) {
         droplet = droplets[i];
